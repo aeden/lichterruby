@@ -18,7 +18,7 @@ end
 
 def all_off(direction: UP)
   0.upto(140) do |n|
-    lights(target: 0, i: n, r: 0, g: 0, b: 0)
+    off(n)
   end
 end
 
@@ -26,13 +26,21 @@ def all_on(color, direction: UP)
   case direction
   when UP then
     0.upto(140) do |n|
-      lights(target: 0, i: n, r: color.red, g: color.green, b: color.blue)
+      on(n, color)
     end
   when DOWN then
     140.downto(0) do |n|
-      lights(target: 0, i: n, r: color.red, g: color.green, b: color.blue)
+      on(n, color)
     end
   end
+end
+
+def off(i)
+  lights(target: 0, i: i, r: 0, g: 0, b: 0)
+end
+
+def on(i, color)
+  lights(target: 0, i: i, r: color.red, g: color.green, b: color.blue)
 end
 
 def lights(target: 0, i: 0, r: 0, g: 0, b: 0)

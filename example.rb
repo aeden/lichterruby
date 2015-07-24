@@ -8,6 +8,7 @@ while(true)
   all_on(Color.new(255, 0, 0), direction: DOWN)
   sleep(2)
   all_on(Color.new(0, 255, 0), direction: DOWN)
+  sleep(1)
 end
 
 # random

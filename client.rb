@@ -16,6 +16,10 @@ class Color
   end
 end
 
+RED = Color.new(255, 0, 0)
+GREEN = Color.new(0, 255, 0)
+BLUE = Color.new(0, 0, 255)
+
 def all_off(direction: UP)
   0.upto(140) do |n|
     off(n)

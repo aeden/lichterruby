@@ -1,13 +1,13 @@
 # back and forth
 all_off
 while(true)
-  all_on(Color.new(255, 0, 0))
+  all_on(RED)
   sleep(2)
-  all_on(Color.new(0, 255, 0))
+  all_on(BLUE)
   sleep(1)
-  all_on(Color.new(255, 0, 0), direction: DOWN)
+  all_on(RED, direction: DOWN)
   sleep(2)
-  all_on(Color.new(0, 255, 0), direction: DOWN)
+  all_on(BLUE, direction: DOWN)
   sleep(1)
 end
 
@@ -22,7 +22,6 @@ while(true)
 end
 
 # black, red, yellow
-
 all_off
 1.upto(140) do |n|
   case n % 3
@@ -38,7 +37,7 @@ all_off
   end
 end
 
-# bleu, blanc, rouge
+# Viva la France!
 all_off
 1.upto(140) do |n|
   case n % 3

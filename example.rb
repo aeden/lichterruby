@@ -1,29 +1,18 @@
 # back and forth
-1.upto(140) do |n|
-  lights(target: 0, i: n, r: 0, g: 0, b: 0)
-end
+all_off
 while(true)
-  1.upto(140) do |n|
-    lights(target: 0, i: n, r: 255, g: 0, b: 0)
-  end
-  sleep(5)
-  1.upto(140) do |n|
-    lights(target: 0, i: n, r: 0, g: 255, b: 0)
-  end
-  140.downto(1) do |n|
-    lights(target: 0, i: n, r: 255, g: 0, b: 0)
-  end
-  sleep(5)
-  140.downto(1) do |n|
-    lights(target: 0, i: n, r: 0, g: 255, b: 0)
-  end
+  all_on(Color.new(255, 0, 0))
+  sleep(2)
+  all_on(Color.new(0, 255, 0))
+  sleep(1)
+  all_on(Color.new(255, 0, 0), direction: DOWN)
+  sleep(2)
+  all_on(Color.new(0, 255, 0), direction: DOWN)
 end
 
 # random
 
-1.upto(140) do |n|
-  lights(target: 0, i: n, r: 0, g: 0, b: 0)
-end
+all_off
 while(true)
   1.upto(140) do |n|
     lights(target: 0, i: n, r: rand(255), g: rand(255), b: rand(255))
@@ -33,9 +22,7 @@ end
 
 # black, red, yellow
 
-1.upto(140) do |n|
-  lights(target: 0, i: n, r: 0, g: 0, b: 0)
-end
+all_off
 1.upto(140) do |n|
   case n % 3
     when 0 then
@@ -45,7 +32,7 @@ end
       lights(target: 0, i: n, r: 255, g: 0, b: 0)
       puts "red"
     when 2 then
-      lights(target: 0, i: n, r: 255, g: 255, b: 0)
+      lights(target: 0, i: n, r: 255, g: 255, b: 50)
       puts "yellow"
   end
 end

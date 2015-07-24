@@ -6,7 +6,6 @@ Ruby implementation of the light controller:
 irb -r ./client
 > all_off
 > all_on(RED)
-> all_of
 > all_on(GREEN, DOWN)
 ```
 

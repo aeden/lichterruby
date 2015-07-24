@@ -14,6 +14,10 @@ class Color
     @green = g
     @blue = b
   end
+
+  def self.random
+    Color.new(rand(255), rand(255), rand(255))
+  end
 end
 
 RED = Color.new(255, 0, 0)

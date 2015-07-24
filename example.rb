@@ -1,20 +1,29 @@
 # back and forth
+colors=[RED, BLUE]
 all_off
 while(true)
-  all_on(RED)
+  all_on(colors.first)
   sleep(2)
-  all_on(BLUE)
+  all_on(colors.last)
   sleep(1)
-  all_on(RED, direction: DOWN)
+  all_on(colors.first, direction: DOWN)
   sleep(2)
-  all_on(BLUE, direction: DOWN)
+  all_on(colors.last, direction: DOWN)
   sleep(1)
 end
 
 # slow up
 all_off
 while(true)
-  c = Color.new(rand(255), rand(255), rand(255))
+  0.upto(140) { |i| on(i, RED); sleep(0.05) }
+  0.upto(140) { |i| on(i, BLUE); sleep(0.05) }
+  0.upto(140) { |i| on(i, GREEN); sleep(0.05) }
+end
+
+
+all_off
+while(true)
+  c = Color.random
   puts "color: #{c.inspect}"
   0.upto(140) do |i|
     on(i, c)

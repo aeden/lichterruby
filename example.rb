@@ -37,3 +37,19 @@ all_off
       puts "yellow"
   end
 end
+
+# bleu, blanc, rouge
+all_off
+1.upto(140) do |n|
+  case n % 3
+    when 0 then
+      on(n, Color.new(0, 0, 255))
+      puts "blue"
+    when 1 then
+      on(n, Color.new(255, 255, 255))
+      puts "white"
+    when 2 then
+      on(n, Color.new(255, 0, 0))
+      puts "red"
+  end
+end
